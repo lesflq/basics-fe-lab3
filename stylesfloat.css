@@ -1,0 +1,102 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+html, body {
+    height: 100%; /* Висота html і body на 100% */
+    margin: 0;
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh; /* Мінімальна висота контейнера 100% висоти вікна */
+    padding-bottom: 60px; /* Місце для футера */
+    overflow: hidden; /* Щоб уникнути горизонтальної прокрутки */
+    position: relative;
+}
+
+.header {
+    float: right;
+    width: 66.66%;
+    background-color: lightgray;
+    text-align: center;
+    padding: 20px;
+}
+
+.sidebar-left {
+    float: left;
+    width: 33.33%;
+    background-color: darkorange;
+    min-height: 67vh; /* Розраховуємо висоту на основі висоти viewport і футера */
+}
+
+.content {
+    float:left;
+    width: 33.33%;
+    min-height: 10vh;
+    background-color: lightgreen;
+    padding-bottom: 20px; /* Щоб не перекривати футер */
+}
+
+.sidebar-right {
+    float: right;
+    width: 33.33%;
+    background-color: coral;
+    padding-bottom: 20px; /* Щоб не перекривати футер */
+    min-height: 100px; /* Висота на основі висоти viewport, header і футера */
+    box-sizing: border-box; /* Включає padding в розрахунок висоти */
+}
+
+.footer {
+    clear: left; /* Очистити float-елементи перед футером */
+    width: 66.66%;
+    background-color: greenyellow;
+    text-align: left;
+    padding: 20px;
+}
+
+.img-container {
+    text-align: center;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Media Queries для малих екранів */
+@media (max-width: 768px) {
+    .header {
+        width: 100%;
+        float: none;
+        padding: 10px; /* Зменшити відступи для мобільних пристроїв */
+    }
+
+    .sidebar-left,
+    .content,
+    .sidebar-right {
+        float: none;
+        width: 100%; /* Робимо всі секції на всю ширину екрана */
+        margin-left: 0; /* Виправити margin для мобільних пристроїв */
+    }
+
+    .sidebar-left {
+        margin-bottom: 20px; /* Збільшити відстань між блоками для кращої видимості */
+    }
+
+    .footer {
+        width: 100%;
+        padding: 10px; /* Зменшити відступи для мобільних пристроїв */
+        margin-top: 20px; /* Простір між блоками і футером */
+    }
+
+    /* Додаткові стилі для мобільних пристроїв */
+    .container {
+        padding: 0 10px; /* Додати відступи для контейнера */
+    }
+}
